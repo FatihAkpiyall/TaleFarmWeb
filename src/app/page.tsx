@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Sparkles, Download, Star, Users, Zap } from 'lucide-react'
+import { BookOpen, Sparkles, Download, Star, Users, Zap, Heart, Brain, Smile, Shield, Globe, Award } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -29,7 +29,8 @@ export default function Home() {
               className="hidden md:flex items-center space-x-8"
             >
               <a href="#features" className="text-gray-600 hover:text-primary-600 transition-colors">Özellikler</a>
-              <a href="#about" className="text-gray-600 hover:text-primary-600 transition-colors">Hakkında</a>
+              <a href="#kids" className="text-gray-600 hover:text-primary-600 transition-colors">Çocuklar İçin</a>
+              <a href="#parents" className="text-gray-600 hover:text-primary-600 transition-colors">Ebeveynler</a>
               <a href="#contact" className="text-gray-600 hover:text-primary-600 transition-colors">İletişim</a>
             </motion.div>
           </div>
@@ -46,15 +47,16 @@ export default function Home() {
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                Hikayelerinizi
+                Çocukların Hayal
               </span>
               <br />
-              <span className="text-gray-800">Hayata Geçirin</span>
+              <span className="text-gray-800">Dünyasını Keşfedin</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Yapay zeka destekli hikaye oluşturma uygulaması ile hayal gücünüzü serbest bırakın. 
-              Benzersiz hikayeler yaratın, paylaşın ve keşfedin.
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+              TaleFarm, çocukların yaratıcılığını geliştiren, güvenli ve eğitici bir hikaye oluşturma uygulamasıdır. 
+              Yapay zeka destekli teknolojimizle çocuklar kendi hikayelerini yazabilir, karakterler yaratabilir ve 
+              hayal güçlerini sınırsızca kullanabilirler.
             </p>
 
             <motion.div 
@@ -65,7 +67,7 @@ export default function Home() {
             >
               <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center space-x-2">
                 <Download className="w-5 h-5" />
-                <span>Hemen İndir</span>
+                <span>Ücretsiz İndir</span>
               </button>
               
               <button className="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary-50 transition-all duration-200 flex items-center space-x-2">
@@ -89,8 +91,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
+      {/* Kids Section */}
+      <section id="kids" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -99,29 +101,29 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Neden TaleFarm?
+              Çocuklar İçin Özel Tasarım
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Yapay zeka teknolojisi ile desteklenen özelliklerimizle hikaye yazmanın keyfini çıkarın.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              TaleFarm, çocukların yaş grubuna özel olarak tasarlanmış, güvenli ve eğlenceli bir deneyim sunar.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Sparkles,
-                title: "AI Destekli Yazım",
-                description: "Yapay zeka ile hikaye fikirleri üretin ve yazım sürecinizi hızlandırın."
+                icon: Brain,
+                title: "Yaratıcılığı Geliştirir",
+                description: "Çocuklar kendi hikayelerini yazarak hayal güçlerini geliştirir ve yaratıcı düşünme becerilerini artırır."
               },
               {
-                icon: BookOpen,
-                title: "Zengin Kütüphane",
-                description: "Binlerce hikaye şablonu ve karakter ile yaratıcılığınızı artırın."
+                icon: Heart,
+                title: "Güvenli Ortam",
+                description: "Çocuk dostu arayüz ve güvenlik önlemleriyle tamamen güvenli bir dijital ortam."
               },
               {
-                icon: Users,
-                title: "Topluluk",
-                description: "Diğer yazarlarla bağlantı kurun, hikayelerinizi paylaşın ve geri bildirim alın."
+                icon: Smile,
+                title: "Eğlenceli Öğrenme",
+                description: "Oyunlaştırılmış özelliklerle çocuklar eğlenirken öğrenir ve gelişir."
               }
             ].map((feature, index) => (
               <motion.div
@@ -142,15 +144,130 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Uygulama Özellikleri
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              TaleFarm'in gelişmiş özellikleriyle çocuklar hikaye yazmanın keyfini çıkarır.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Sparkles,
+                title: "AI Destekli Yazım",
+                description: "Yapay zeka ile hikaye fikirleri üretin ve yazım sürecini hızlandırın."
+              },
+              {
+                icon: BookOpen,
+                title: "Karakter Oluşturma",
+                description: "Kendi karakterlerinizi tasarlayın ve hikayelerinize hayat verin."
+              },
+              {
+                icon: Shield,
+                title: "Güvenli İçerik",
+                description: "Tüm içerikler çocuk dostu ve eğitici değerlerle kontrol edilir."
+              },
+              {
+                icon: Globe,
+                title: "Çoklu Dil",
+                description: "Türkçe ve İngilizce dil desteği ile geniş kitlelere ulaşın."
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="bg-white p-6 rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Parents Section */}
+      <section id="parents" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                Ebeveynler İçin <br />
+                <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                  Güvenli Seçim
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 mb-8">
+                TaleFarm, çocuklarınızın dijital dünyada güvenle vakit geçirmesi için tasarlanmıştır. 
+                Eğitici içerik, güvenlik önlemleri ve ebeveyn kontrolü ile tam güvenlik sağlar.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-gray-700">Yaş grubuna uygun içerik</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-gray-700">Ebeveyn kontrol paneli</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-gray-700">Reklamsız deneyim</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-gray-700">Gelişim raporları</span>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="bg-gradient-to-br from-primary-400 to-secondary-400 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Ebeveyn Kontrolü</h3>
+                <p className="mb-6">Çocuklarınızın aktivitelerini takip edin ve güvenli bir ortam sağlayın.</p>
+                <button className="bg-white text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                  Daha Fazla Bilgi
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "10K+", label: "Aktif Kullanıcı" },
+              { number: "10K+", label: "Mutlu Çocuk" },
               { number: "50K+", label: "Oluşturulan Hikaye" },
-              { number: "4.9", label: "Uygulama Puanı", icon: Star },
-              { number: "24/7", label: "AI Desteği", icon: Zap }
+              { number: "4.9", label: "Ebeveyn Puanı", icon: Star },
+              { number: "100%", label: "Güvenli İçerik", icon: Shield }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -186,9 +303,9 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                TaleFarm, yapay zeka teknolojisi ile hikaye yazma deneyimini yeniden tanımlıyor. 
-                Hayal gücünüzü serbest bırakın, AI'ın gücüyle desteklenen araçlarımızla 
-                benzersiz hikayeler yaratın.
+                TaleFarm, çocukların yaratıcılığını geliştiren, güvenli ve eğitici bir platformdur. 
+                Yapay zeka teknolojisi ile desteklenen araçlarımızla çocuklar hayal güçlerini 
+                sınırsızca kullanabilir ve kendi hikayelerini yaratabilirler.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -201,7 +318,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-gray-700">Topluluk desteği</span>
+                  <span className="text-gray-700">Ebeveyn kontrolü</span>
                 </div>
               </div>
             </motion.div>
@@ -214,7 +331,7 @@ export default function Home() {
             >
               <div className="bg-gradient-to-br from-primary-400 to-secondary-400 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Hemen Başlayın</h3>
-                <p className="mb-6">Uygulamayı indirin ve ilk hikayenizi yazmaya başlayın!</p>
+                <p className="mb-6">Uygulamayı indirin ve çocuklarınızın yaratıcılığını keşfedin!</p>
                 <button className="bg-white text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
                   Ücretsiz İndir
                 </button>
@@ -236,7 +353,7 @@ export default function Home() {
                 <span className="text-xl font-bold">TaleFarm</span>
               </div>
               <p className="text-gray-400">
-                Hikaye yazmanın geleceğini şekillendiriyoruz.
+                Çocukların yaratıcılığını geliştiren güvenli dijital platform.
               </p>
             </div>
             
@@ -244,17 +361,8 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Ürün</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Özellikler</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Fiyatlandırma</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Güvenlik</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Güncellemeler</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">Şirket</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Hakkımızda</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Kariyer</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">İletişim</a></li>
               </ul>
             </div>
             
@@ -262,14 +370,23 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Destek</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Yardım Merkezi</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Topluluk</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Geri Bildirim</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Ebeveyn Rehberi</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">İletişim</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Yasal</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Kullanım Şartları</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">KVKK</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 TaleFarm. Tüm hakları saklıdır.</p>
+            <p>&copy; 2024 TaleFarm. Tüm hakları saklıdır. Çocuklar için güvenli dijital deneyim.</p>
           </div>
         </div>
       </footer>
