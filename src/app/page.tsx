@@ -31,7 +31,7 @@ export default function Home() {
               <a href="#features" className="text-gray-600 hover:text-primary-600 transition-colors">Özellikler</a>
               <a href="#kids" className="text-gray-600 hover:text-primary-600 transition-colors">Çocuklar İçin</a>
               <a href="#parents" className="text-gray-600 hover:text-primary-600 transition-colors">Ebeveynler</a>
-              <a href="#contact" className="text-gray-600 hover:text-primary-600 transition-colors">İletişim</a>
+              <a href="/contact" className="text-gray-600 hover:text-primary-600 transition-colors">İletişim</a>
             </motion.div>
           </div>
         </div>
@@ -371,7 +371,7 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Yardım Merkezi</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Ebeveyn Rehberi</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">İletişim</a></li>
+                <li><a href="/contact" className="hover:text-white transition-colors">İletişim</a></li>
               </ul>
             </div>
             
