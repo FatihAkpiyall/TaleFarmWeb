@@ -378,7 +378,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Yasal</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a></li>
+                <li><a href="/privacy" className="hover:text-white transition-colors">Gizlilik Politikası</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Kullanım Şartları</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">KVKK</a></li>
               </ul>
