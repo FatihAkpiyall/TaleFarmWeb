@@ -121,58 +121,62 @@ export default function Support() {
               </div>
 
               {/* Veri Silme Bölümü */}
-              <div className="border-t-2 border-gray-100 pt-12 mt-12">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center space-x-3">
-                  <span>Veri Silme</span>
-                </h2>
-                
-                <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                  Kullanıcılarımız uygulama içerisinde oluşturdukları <strong className="text-primary-600">hikayeler</strong> ve <strong className="text-primary-600">çizimleri</strong> diledikleri zaman kalıcı olarak silebilirler. 
-                  Bu işlem yalnızca <strong className="text-primary-600">uygulama içinden</strong> gerçekleştirilebilir.
-                </p>
-                
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  Hikaye veya Çizim Silmek İçin İzlenecek Adımlar:
-                </h3>
-                
-                <div className="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-xl p-6 mb-8">
-                  <ol className="space-y-4 text-gray-700">
-                    <li className="flex items-start space-x-3">
-                      <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">1</span>
-                      <span>Uygulamanın <strong>Hikayelerim</strong> veya <strong>Çizimlerim</strong> sayfasına gidin.</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">2</span>
-                      <span>Silmek istediğiniz hikaye veya çizim kartını seçin.</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">3</span>
-                      <span>Kart üzerinde bulunan <strong>"Sil"</strong> butonuna tıklayın.</span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">4</span>
-                      <span>Çıkan onay ekranında işleminizi doğrulayın.</span>
-                    </li>
-                  </ol>
-                </div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-16 flex items-center space-x-3">
+                <span>Veri Silme</span>
+              </h2>
+              
+              <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+                Kullanıcılarımız uygulama içerisinde oluşturdukları <strong className="text-primary-600">hikayeler</strong> ve <strong className="text-primary-600">çizimleri</strong> diledikleri zaman kalıcı olarak silebilirler. 
+                Bu işlem yalnızca <strong className="text-primary-600">uygulama içinden</strong> gerçekleştirilebilir.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                Hikaye veya Çizim Silmek İçin İzlenecek Adımlar:
+              </h3>
+              
+              <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 mb-8">
+                <ol className="space-y-4 text-gray-700">
+                  <li className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">1</span>
+                    <span>Uygulamanın <strong>Hikayelerim</strong> veya <strong>Çizimlerim</strong> sayfasına gidin.</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">2</span>
+                    <span>Silmek istediğiniz hikaye veya çizim kartını seçin.</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">3</span>
+                    <span>Kart üzerinde bulunan <strong>"Sil"</strong> butonuna tıklayın.</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="flex-shrink-0 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">4</span>
+                    <span>Çıkan onay ekranında işleminizi doğrulayın.</span>
+                  </li>
+                </ol>
+              </div>
 
-                <div className="bg-orange-50 border-l-4 border-orange-400 p-6 rounded-r-xl mb-8">
-                  <div className="flex items-start space-x-3">
-                    <AlertTriangle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-orange-800 font-semibold mb-2">⚠️ Önemli Uyarı</h4>
-                      <p className="text-orange-700 text-sm leading-relaxed">
-                        Silme işlemi gerçekleştirildikten sonra ilgili hikaye veya çizim kalıcı olarak kaldırılır ve 
-                        geri getirilemez. Bu işlem geri alınamaz.
-                      </p>
-                    </div>
+              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-xl mb-8">
+                <div className="flex items-start space-x-3">
+                  <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-red-800 font-semibold mb-2">⚠️ Önemli Uyarı</h4>
+                    <p className="text-red-700 text-sm leading-relaxed">
+                      Silme işlemi gerçekleştirildikten sonra ilgili hikaye veya çizim kalıcı olarak kaldırılır ve geri getirilemez. 
+                      Bu işlem geri alınamaz.
+                    </p>
                   </div>
                 </div>
-
-                <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                  Silme sürecinde sorun yaşamanız halinde <a href="mailto:destek@tale-farm.com" className="text-primary-600 hover:text-primary-700 underline">destek ekibimizle iletişime geçebilirsiniz</a>.
-                </p>
               </div>
+
+              <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+                Silme sürecinde sorun yaşamanız halinde{' '}
+                <a 
+                  href="mailto:destek@tale-farm.com" 
+                  className="text-primary-600 hover:text-primary-700 underline font-semibold"
+                >
+                  destek ekibimizle iletişime geçebilirsiniz
+                </a>.
+              </p>
 
               <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl p-6 text-white text-center">
                 <Mail className="w-8 h-8 mx-auto mb-4 opacity-90" />
