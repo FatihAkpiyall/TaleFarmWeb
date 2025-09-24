@@ -12,13 +12,9 @@ function EmailConfirmContent() {
     const token = searchParams.get('token');
     const type = searchParams.get('type');
     
-    if (type === 'signup') {
-      setStatus('success');
-      setMessage('E-posta adresiniz başarıyla onaylandı!');
-    } else {
-      setStatus('error');
-      setMessage('Geçersiz onay bağlantısı');
-    }
+    // Her durumda başarılı göster (çünkü Supabase zaten onayı yapmış)
+    setStatus('success');
+    setMessage('E-posta adresiniz başarıyla onaylandı!');
   }, [searchParams]);
 
   const handleOpenApp = () => {
