@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function EmailConfirmPage() {
+function EmailConfirmContent() {
   const searchParams = useSearchParams();
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
   const [message, setMessage] = useState('');
@@ -133,5 +133,24 @@ export default function EmailConfirmPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function EmailConfirmPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-8 text-center">
+            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+            </div>
+            <h1 className="text-2xl font-bold text-white mb-2">Yükleniyor...</h1>
+          </div>
+        </div>
+      </div>
+    }>
+      <EmailConfirmContent />
+    </Suspense>
   );
 }
