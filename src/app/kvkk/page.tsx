@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Shield, ArrowLeft, Mail, Calendar, Users, Lock, Eye, Heart, Globe } from 'lucide-react'
+import { BookOpen, Shield, ArrowLeft, Mail, Calendar, Users, Lock, Eye, Database, FileText, AlertTriangle, Globe } from 'lucide-react'
 import Link from 'next/link'
 
-export default function PrivacyPolicy() {
+export default function KVKK() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* Navigation */}
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                Gizlilik Politikası
+                KVKK Aydınlatma Metni
               </span>
             </h1>
             
@@ -67,9 +67,8 @@ export default function PrivacyPolicy() {
             </div>
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TaleFarm olarak, kullanıcılarımızın ve özellikle çocukların gizliliğini korumak bizim için önceliklidir. 
-              Bu gizlilik politikası, <strong>Çocukların Çevrimiçi Gizliliğini Koruma Yasası (COPPA)</strong>, 
-              <strong>KVKK (6698 Sayılı Kişisel Verilerin Korunması Kanunu)</strong> ve diğer geçerli veri koruma düzenlemelerine uygun olarak hazırlanmıştır.
+              TaleFarm uygulaması kullanıcılarının kişisel verilerinin korunması ve işlenmesi hakkında 
+              bilgilendirme metnidir. 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında hazırlanmıştır.
             </p>
           </motion.div>
         </div>
@@ -79,7 +78,7 @@ export default function PrivacyPolicy() {
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           
-          {/* Section 1: Toplanan Veriler */}
+          {/* Section 1: Veri Sorumlusu */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -88,96 +87,75 @@ export default function PrivacyPolicy() {
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <Eye className="w-6 h-6 text-white" />
+                <Users className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">📊 Topladığımız Veriler</h2>
+              <h2 className="text-2xl font-bold text-gray-800">1. Veri Sorumlusu</h2>
             </div>
             
             <div className="space-y-4 text-gray-600">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
                 <div>
-                  <strong className="text-gray-800">E-posta adresi:</strong> Hesap oluşturma, giriş yapma ve iletişim için
+                  <strong className="text-gray-800">Veri sorumlusu:</strong> TaleFarm uygulaması geliştiricisi
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
                 <div>
-                  <strong className="text-gray-800">Kullanıcı adı:</strong> Platformda kimliğinizi belirlemek için
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <div>
-                  <strong className="text-gray-800">Doğum tarihi:</strong> Kullanıcının yaşını doğrulamak, 13 yaş altı çocuklar için ebeveyn onayı almak ve yaşa uygun içerik sağlamak için
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <div>
-                  <strong className="text-gray-800">Ebeveyn e-posta adresi (13 yaş altı kullanıcılar için):</strong> Onay süreci ve bilgilendirme için
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <div>
-                  <strong className="text-gray-800">Hikaye okuma geçmişi:</strong> Daha iyi içerik önerileri sunmak için
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <div>
-                  <strong className="text-gray-800">Tercihler ve ayarlar:</strong> Kişiselleştirilmiş deneyim sağlamak için
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <div>
-                  <strong className="text-gray-800">Uygulama kullanım verileri (log kayıtları, performans verileri):</strong> Uygulamanın işleyişini geliştirmek için
+                  <strong className="text-gray-800">İletişim e-posta adresi:</strong> talefarm.app@gmail.com
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Section 2: 13 Yaş Altı Kullanıcılar */}
+          {/* Section 2: Toplanan Kişisel Veriler */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 mb-8 border-2 border-primary-200"
+            className="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-gray-100"
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
+                <Database className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">👶 13 Yaş Altı Kullanıcılar</h2>
+              <h2 className="text-2xl font-bold text-gray-800">2. Toplanan Kişisel Veriler</h2>
             </div>
             
             <div className="space-y-4 text-gray-600">
+              <p className="mb-4">TaleFarm uygulaması kullanıcılarından aşağıdaki kişisel veriler toplanmaktadır:</p>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>13 yaşından küçük kullanıcılar uygulamayı yalnızca <strong>ebeveyn onayı</strong> ile kullanabilir.</span>
+                <span>E-posta adresi</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Kayıt sırasında <strong>doğum tarihi</strong> istenir. 13 yaş altı kullanıcılar için ebeveyn onayı zorunludur.</span>
+                <span>Kullanıcı adı</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Ebeveyn onayı alınmadan <strong>kişisel veri toplanmaz, işlenmez veya saklanmaz</strong>.</span>
+                <span>Doğum tarihi (yaş doğrulama ve 13 yaş altı kullanıcılar için ebeveyn onayı amacıyla)</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Ebeveynler, çocuklarının verilerini istedikleri zaman görüntüleme, düzeltme veya silme hakkına sahiptir.</span>
+                <span>Hikaye okuma geçmişi</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Ebeveyn onayı geri çekildiğinde, çocuğun tüm verileri silinir ve hesap kapatılır.</span>
+                <span>Tercihler ve ayarlar</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Uygulama kullanım verileri (log kayıtları, performans verileri)</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Kullanıcının uygulamaya yüklediği fotoğraflar ve görseller</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Section 3: 13 Yaş Üstü Kullanıcılar */}
+          {/* Section 3: Kişisel Verilerin İşlenme Amaçları */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,28 +164,9 @@ export default function PrivacyPolicy() {
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">👥 13 Yaş Üstü Kullanıcılar</h2>
-            </div>
-            
-            <div className="text-gray-600">
-              <p>Doğum tarihi doğrulaması sonrası kullanıcı doğrudan kayıt olabilir. Yine de tüm kullanıcıların verileri aynı yüksek güvenlik standartları ile korunur.</p>
-            </div>
-          </motion.div>
-
-          {/* Section 4: Verilerin Kullanım Amaçları */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-gray-100"
-          >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
                 <Eye className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">🎯 Verilerin Kullanım Amaçları</h2>
+              <h2 className="text-2xl font-bold text-gray-800">3. Kişisel Verilerin İşlenme Amaçları</h2>
             </div>
             
             <div className="space-y-4 text-gray-600">
@@ -217,28 +176,51 @@ export default function PrivacyPolicy() {
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Çocuğa uygun ve kişiselleştirilmiş hikaye önerileri sağlamak</span>
+                <span>Kişiselleştirilmiş hikaye ve görsel önerileri sunmak</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Eğitim amaçlı içerikler sunmak</span>
+                <span>Uygulama performansını izlemek ve iyileştirmek</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Uygulama performansını artırmak ve hataları gidermek</span>
+                <span>Güvenlik ve dolandırıcılığı önlemek</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Dolandırıcılık ve kötüye kullanımın önlenmesi</span>
+                <span>Hizmetlerin ve içeriklerin geliştirilmesi</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Yasal yükümlülüklerin yerine getirilmesi</span>
+                <span>Yasal yükümlülükleri yerine getirmek</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Kullanıcıların yüklediği görselleri içerik üretimi ve görselleştirme amacıyla işlemek</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Section 5: Veri Güvenliği */}
+          {/* Section 4: Kişisel Verilerin Aktarılması */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 mb-8 border-2 border-blue-200"
+          >
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
+                <Globe className="w-6 h-6 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800">4. Kişisel Verilerin Aktarılması</h2>
+            </div>
+            
+            <div className="text-gray-600">
+              <p>Kullanıcı verileri, uygulama içi içerik üretimi ve hizmet geliştirme amacıyla anonim olarak üçüncü taraf yapay zekâ servis sağlayıcılarına geçici olarak iletilebilir (ör. Vertex AI, OpenRouter). Bu servisler verileri yalnızca işlem süresince işler, kalıcı olarak saklamaz.</p>
+            </div>
+          </motion.div>
+
+          {/* Section 5: Kişisel Verilerin Saklanma Süresi */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -247,58 +229,60 @@ export default function PrivacyPolicy() {
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <Lock className="w-6 h-6 text-white" />
+                <Calendar className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">🔒 Veri Güvenliği</h2>
+              <h2 className="text-2xl font-bold text-gray-800">5. Kişisel Verilerin Saklanma Süresi</h2>
             </div>
             
-            <div className="space-y-4 text-gray-600">
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Tüm veriler <strong>SSL şifreleme</strong> ile korunur.</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Veriler güvenli sunucularda saklanır.</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Erişim sadece yetkili personelle sınırlıdır.</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Düzenli güvenlik testleri ve denetimler yapılır.</span>
-              </div>
+            <div className="text-gray-600">
+              <p>Toplanan kişisel veriler, kullanıcı hesabı aktif olduğu sürece saklanır. Hesap silindiğinde veya KVKK kapsamında silme talebi geldiğinde, tüm veriler kalıcı olarak silinir.</p>
             </div>
           </motion.div>
 
-          {/* Section 6: Veri Silme Hakkı */}
+          {/* Section 6: Kullanıcı Hakları */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-gray-100"
+            className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 mb-8 border-2 border-green-200"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">🗑️ Veri Silme Hakkı</h2>
+              <h2 className="text-2xl font-bold text-gray-800">6. Kullanıcı Hakları</h2>
             </div>
             
             <div className="space-y-4 text-gray-600">
+              <p className="mb-4">Kullanıcılar KVKK kapsamında aşağıdaki haklara sahiptir:</p>
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Kullanıcılar (veya ebeveynler) hesaplarını istedikleri zaman silebilir.</span>
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                <span>Kişisel verilerinin işlenip işlenmediğini öğrenme</span>
               </div>
               <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Hesap silindiğinde tüm kişisel veriler, ebeveyn onay kayıtları ve kullanım geçmişi kalıcı olarak kaldırılır.</span>
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                <span>İşlenen verilerine erişme</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                <span>Yanlış veya eksik verileri düzeltme</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                <span>Verilerin silinmesini veya yok edilmesini talep etme</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                <span>Veri işleme faaliyetlerine itiraz etme</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                <span>Yetkili kurumlara şikayette bulunma</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Section 7: Kullanıcı Hakları */}
+          {/* Section 7: Veri Güvenliği */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -307,52 +291,28 @@ export default function PrivacyPolicy() {
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <Shield className="w-6 h-6 text-white" />
+                <Lock className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">⚖️ Kullanıcı Hakları</h2>
+              <h2 className="text-2xl font-bold text-gray-800">7. Veri Güvenliği</h2>
             </div>
             
             <div className="space-y-4 text-gray-600">
-              <p className="mb-4">KVKK ve COPPA kapsamında tüm kullanıcıların (ve ebeveynlerin) şu hakları vardır:</p>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Hangi verilerin toplandığını öğrenme</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Verilere erişme ve yanlış verileri düzeltme</span>
+                <span>Tüm veriler SSL şifreleme ile korunur.</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Verilerin silinmesini talep etme</span>
+                <span>Veriler güvenli sunucularda saklanır.</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Veri işleme faaliyetlerine itiraz etme</span>
+                <span>Düzenli güvenlik testleri ve denetimler yapılır.</span>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
-                <span>Yetkili kurumlara şikayette bulunma</span>
+                <span>Erişim yetkileri sadece yetkili personelle sınırlıdır.</span>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Section 8: Politika Değişiklikleri */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-gray-100"
-          >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">🔄 Politika Değişiklikleri</h2>
-            </div>
-            
-            <div className="text-gray-600">
-              <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler, uygulama içi bildirimler veya e-posta aracılığıyla kullanıcılarla paylaşılır.</p>
             </div>
           </motion.div>
 
@@ -360,13 +320,13 @@ export default function PrivacyPolicy() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
             className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-white text-center"
           >
             <Mail className="w-16 h-16 mx-auto mb-4 opacity-80" />
             <h3 className="text-2xl font-bold mb-4">📩 İletişim</h3>
             <p className="text-lg mb-6 opacity-90">
-              Herhangi bir soru, talep veya şikayet için bize ulaşabilirsiniz:
+              KVKK ile ilgili her türlü soru, talep veya şikayet için bizimle iletişime geçebilirsiniz:
             </p>
             <div className="text-lg mb-6">
               <p><strong>E-posta:</strong> talefarm.app@gmail.com</p>
