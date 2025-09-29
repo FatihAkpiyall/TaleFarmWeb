@@ -136,6 +136,18 @@ export default function PrivacyPolicy() {
                   <strong className="text-gray-800">Uygulama kullanım verileri (log kayıtları, performans verileri):</strong> Uygulamanın işleyişini geliştirmek için
                 </div>
               </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <div>
+                  <strong className="text-gray-800">Çizim görselleri (Çizim Canlandır özelliği):</strong> Kullanıcının çizdiği görseller betimlenip istenilen stilde görsel oluşturmak için kullanılır. Çizimler "Çizimlerim" sayfasında saklanır ve kullanıcı istediği zaman kalıcı olarak silebilir.
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <div>
+                  <strong className="text-gray-800">Oyuncak görselleri (Oyuncak Canlandır özelliği):</strong> Kullanıcı isterse oyuncağının fotoğrafını yükleyebilir. Bu görseller uygulama içindeki "Oyuncaklar" bölümünde saklanır ve hikayelerde kullanılır. Kullanıcı istediği zaman bu görselleri silebilir.
+                </div>
+              </div>
             </div>
           </motion.div>
 

@@ -152,6 +152,14 @@ export default function KVKK() {
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
                 <span>Kullanıcının uygulamaya yüklediği fotoğraflar ve görseller</span>
               </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Çizim görselleri (Çizim Canlandır özelliği): Kullanıcının çizdiği görseller betimlenip istenilen stilde görsel oluşturmak için kullanılır. Çizimler "Çizimlerim" sayfasında saklanır ve kullanıcı istediği zaman kalıcı olarak silebilir.</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Oyuncak görselleri (Oyuncak Canlandır özelliği): Kullanıcı isterse oyuncağının fotoğrafını yükleyebilir. Bu görseller uygulama içindeki "Oyuncaklar" bölümünde saklanır ve hikayelerde kullanılır. Kullanıcı istediği zaman bu görselleri silebilir.</span>
+              </div>
             </div>
           </motion.div>
 
@@ -197,6 +205,14 @@ export default function KVKK() {
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
                 <span>Kullanıcıların yüklediği görselleri içerik üretimi ve görselleştirme amacıyla işlemek</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Çizim Canlandır özelliği ile kullanıcı çizimlerini AI destekli görsel oluşturma için işlemek</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                <span>Oyuncak Canlandır özelliği ile oyuncak görsellerini hikaye içeriklerinde kullanmak</span>
               </div>
             </div>
           </motion.div>
