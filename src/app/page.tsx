@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Sparkles, Download, Star, Users, Zap, Heart, Brain, Smile, Shield, Globe, Award, Smartphone, Palette, Gift } from 'lucide-react'
+import { BookOpen, Sparkles, Download, Star, Users, Zap, Heart, Brain, Smile, Shield, Globe, Award, Smartphone, Palette, Gift, Moon } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -153,11 +153,6 @@ export default function Home() {
                   </div>
                 </motion.button>
               </div>
-              
-              <button className="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary-50 transition-all duration-200 flex items-center space-x-2">
-                <Sparkles className="w-5 h-5" />
-                <span>Demo İzle</span>
-              </button>
             </motion.div>
           </motion.div>
 
@@ -245,7 +240,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
               {
                 icon: Sparkles,
@@ -266,6 +261,11 @@ export default function Home() {
                 icon: BookOpen,
                 title: "Eğitici Oyuncağım",
                 description: "Çocuğunuzun en sevdiği oyuncağının hikayelerde yer almasına imkan tanır."
+              },
+              {
+                icon: Moon,
+                title: "Uyku Hikayeleri",
+                description: "Çocuğun uyku rutinine geçmesini sağlayan uyku hikayeleri anlatır."
               }
             ].map((feature, index) => (
               <motion.div
@@ -360,6 +360,174 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Ebeveynler Ne Diyor?
+            </h2>
+          </motion.div>
+          
+          <div className="relative">
+            {/* Mobile: Scrollable horizontal container */}
+            <div className="flex gap-6 overflow-x-auto pb-4 md:hidden scrollbar-hide snap-x snap-mandatory">
+              {[
+                {
+                  name: "Ayşe Yılmaz",
+                  comment: "Çocuğum bu uygulamayı çok seviyor! Her gece uyku öncesi hikayeler dinliyor ve çok mutlu. Artık uyku rutini çok daha kolay geçiyor. Kesinlikle tavsiye ederim!",
+                  stars: 5
+                },
+                {
+                  name: "Mehmet Demir",
+                  comment: "Harika bir uygulama! Çocuğumun yaratıcılığını geliştirdiğini gözlemliyorum. Hem eğitici hem de eğlenceli. 5 yıldızı hak ediyor!",
+                  stars: 5
+                },
+                {
+                  name: "Zeynep Kaya",
+                  comment: "Uygulamadan çok memnunuz! Özellikle uyku hikayeleri özelliği çok faydalı oldu. Çocuğum artık rahatça uyuyor. Teşekkürler TaleFarm!",
+                  stars: 5
+                },
+                {
+                  name: "Can Özkan",
+                  comment: "Çocuğum için çok faydalı oldu. Hem hayal gücü gelişti hem de dil becerileri arttı. Eğitici içerikler gerçekten kaliteli. Çok mutluyuz!",
+                  stars: 5
+                },
+                {
+                  name: "Elif Şahin",
+                  comment: "Kesinlikle harika! Çocuğum artık hikaye yazmayı çok seviyor. Güvenli içerik sayesinde rahatça kullanabiliyoruz. Mükemmel bir uygulama!",
+                  stars: 5
+                },
+                {
+                  name: "Burak Arslan",
+                  comment: "Uygulama gerçekten çocuk dostu ve eğitici. Özellikle AI destekli hikayeler çok yaratıcı. Çocuğumun gelişimine çok katkı sağladı!",
+                  stars: 5
+                },
+                {
+                  name: "Selin Yıldız",
+                  comment: "Çok memnunuz! Çocuğumun uyku rutini artık çok daha keyifli. Uyku hikayeleri sayesinde rahatça uyuyor. Herkese tavsiye ederim!",
+                  stars: 5
+                }
+              ].map((review, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-[85vw] sm:w-96 snap-start bg-gradient-to-br from-primary-50 to-secondary-50 p-6 rounded-xl shadow-lg border border-gray-100"
+                >
+                  <div className="flex items-center mb-4 flex-wrap">
+                    <div className="flex space-x-1 mr-4 mb-2">
+                      {[...Array(review.stars)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="font-bold text-gray-800">{review.name}</span>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm">{review.comment}</p>
+                </div>
+              ))}
+            </div>
+            
+            {/* Desktop: Animated scrolling */}
+            <div className="hidden md:block relative overflow-hidden">
+              <div className="flex gap-6 animate-scroll-reviews">
+                {[
+                  {
+                    name: "Ayşe Yılmaz",
+                    comment: "Çocuğum bu uygulamayı çok seviyor! Her gece uyku öncesi hikayeler dinliyor ve çok mutlu. Artık uyku rutini çok daha kolay geçiyor. Kesinlikle tavsiye ederim!",
+                    stars: 5
+                  },
+                  {
+                    name: "Mehmet Demir",
+                    comment: "Harika bir uygulama! Çocuğumun yaratıcılığını geliştirdiğini gözlemliyorum. Hem eğitici hem de eğlenceli. 5 yıldızı hak ediyor!",
+                    stars: 5
+                  },
+                  {
+                    name: "Zeynep Kaya",
+                    comment: "Uygulamadan çok memnunuz! Özellikle uyku hikayeleri özelliği çok faydalı oldu. Çocuğum artık rahatça uyuyor. Teşekkürler TaleFarm!",
+                    stars: 5
+                  },
+                  {
+                    name: "Can Özkan",
+                    comment: "Çocuğum için çok faydalı oldu. Hem hayal gücü gelişti hem de dil becerileri arttı. Eğitici içerikler gerçekten kaliteli. Çok mutluyuz!",
+                    stars: 5
+                  },
+                  {
+                    name: "Elif Şahin",
+                    comment: "Kesinlikle harika! Çocuğum artık hikaye yazmayı çok seviyor. Güvenli içerik sayesinde rahatça kullanabiliyoruz. Mükemmel bir uygulama!",
+                    stars: 5
+                  },
+                  {
+                    name: "Burak Arslan",
+                    comment: "Uygulama gerçekten çocuk dostu ve eğitici. Özellikle AI destekli hikayeler çok yaratıcı. Çocuğumun gelişimine çok katkı sağladı!",
+                    stars: 5
+                  },
+                  {
+                    name: "Selin Yıldız",
+                    comment: "Çok memnunuz! Çocuğumun uyku rutini artık çok daha keyifli. Uyku hikayeleri sayesinde rahatça uyuyor. Herkese tavsiye ederim!",
+                    stars: 5
+                  }
+                ].concat([
+                  {
+                    name: "Ayşe Yılmaz",
+                    comment: "Çocuğum bu uygulamayı çok seviyor! Her gece uyku öncesi hikayeler dinliyor ve çok mutlu. Artık uyku rutini çok daha kolay geçiyor. Kesinlikle tavsiye ederim!",
+                    stars: 5
+                  },
+                  {
+                    name: "Mehmet Demir",
+                    comment: "Harika bir uygulama! Çocuğumun yaratıcılığını geliştirdiğini gözlemliyorum. Hem eğitici hem de eğlenceli. 5 yıldızı hak ediyor!",
+                    stars: 5
+                  },
+                  {
+                    name: "Zeynep Kaya",
+                    comment: "Uygulamadan çok memnunuz! Özellikle uyku hikayeleri özelliği çok faydalı oldu. Çocuğum artık rahatça uyuyor. Teşekkürler TaleFarm!",
+                    stars: 5
+                  },
+                  {
+                    name: "Can Özkan",
+                    comment: "Çocuğum için çok faydalı oldu. Hem hayal gücü gelişti hem de dil becerileri arttı. Eğitici içerikler gerçekten kaliteli. Çok mutluyuz!",
+                    stars: 5
+                  },
+                  {
+                    name: "Elif Şahin",
+                    comment: "Kesinlikle harika! Çocuğum artık hikaye yazmayı çok seviyor. Güvenli içerik sayesinde rahatça kullanabiliyoruz. Mükemmel bir uygulama!",
+                    stars: 5
+                  },
+                  {
+                    name: "Burak Arslan",
+                    comment: "Uygulama gerçekten çocuk dostu ve eğitici. Özellikle AI destekli hikayeler çok yaratıcı. Çocuğumun gelişimine çok katkı sağladı!",
+                    stars: 5
+                  },
+                  {
+                    name: "Selin Yıldız",
+                    comment: "Çok memnunuz! Çocuğumun uyku rutini artık çok daha keyifli. Uyku hikayeleri sayesinde rahatça uyuyor. Herkese tavsiye ederim!",
+                    stars: 5
+                  }
+                ]).map((review, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-96 bg-gradient-to-br from-primary-50 to-secondary-50 p-6 rounded-xl shadow-lg border border-gray-100"
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="flex space-x-1 mr-4">
+                        {[...Array(review.stars)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <span className="font-bold text-gray-800">{review.name}</span>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed">{review.comment}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -370,7 +538,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                Hikaye Yazmanın <br />
+                Hikaye İzlemenin <br />
                 <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
                   Yeni Yolu
                 </span>
