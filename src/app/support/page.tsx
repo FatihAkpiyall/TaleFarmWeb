@@ -1,39 +1,117 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, AlertTriangle, Mail, ArrowLeft } from 'lucide-react'
+import { BookOpen, AlertTriangle, Mail, ArrowLeft, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Support() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-2"
-            >
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                TaleFarm
+            <Link href="/" className="flex items-center space-x-2">
+              <img 
+                src="/logo.png" 
+                alt="TaleFarm Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="text-xl font-bebas text-primary-900">
+                TALEFARM
               </span>
-            </motion.div>
+            </Link>
             
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="hidden md:flex items-center space-x-8"
+              className="hidden md:flex items-center space-x-6"
             >
-              <Link href="/#features" className="text-gray-600 hover:text-primary-600 transition-colors">Özellikler</Link>
-              <Link href="/#kids" className="text-gray-600 hover:text-primary-600 transition-colors">Çocuklar İçin</Link>
-              <Link href="/#parents" className="text-gray-600 hover:text-primary-600 transition-colors">Ebeveynler</Link>
-              <Link href="/contact" className="text-gray-600 hover:text-primary-600 transition-colors">İletişim</Link>
-              <Link href="/support" className="text-primary-600 font-semibold">Destek</Link>
+              <a href="/" className="text-gray-700 hover:text-primary-600 transition-colors font-open-sauce">Ana Sayfa</a>
+              
+              {/* Özellikler Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setOpenDropdown('features')}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors font-open-sauce">
+                  <span>Özellikler</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'features' ? 'rotate-180' : ''}`} />
+                </button>
+                {openDropdown === 'features' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    onMouseEnter={() => setOpenDropdown('features')}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    className="absolute top-full left-0 mt-1 w-56 z-50"
+                  >
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                      <a href="/#features" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Çizim Canlandırma</a>
+                      <a href="/#features" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Hikaye Modu</a>
+                      <a href="/#features" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Uyku Hikayeleri</a>
+                      <a href="/#features" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Eğitici Oyuncağım</a>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Yasal Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setOpenDropdown('legal')}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors font-open-sauce">
+                  <span>Yasal</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'legal' ? 'rotate-180' : ''}`} />
+                </button>
+                {openDropdown === 'legal' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    onMouseEnter={() => setOpenDropdown('legal')}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    className="absolute top-full left-0 mt-1 w-56 z-50"
+                  >
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                      <a href="/privacy" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Gizlilik Politikası</a>
+                      <a href="/terms" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Kullanım Şartları</a>
+                      <a href="/kvkk" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">KVKK</a>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              {/* Destek Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setOpenDropdown('support')}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors font-open-sauce">
+                  <span>Destek</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === 'support' ? 'rotate-180' : ''}`} />
+                </button>
+                {openDropdown === 'support' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    onMouseEnter={() => setOpenDropdown('support')}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    className="absolute top-full left-0 mt-1 w-56 z-50"
+                  >
+                    <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                      <a href="/support" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Yardım Merkezi</a>
+                      <a href="/#parents" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">Ebeveyn Rehberi</a>
+                      <a href="/contact" className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors font-open-sauce text-sm">İletişim</a>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </motion.div>
           </div>
         </div>
