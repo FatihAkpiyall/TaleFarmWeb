@@ -11,7 +11,7 @@ export default function Home() {
     {
       id: 1,
       title: "Çizim Canlandırma",
-      video: "/cizim_canlandir_kisim.webm",
+      image: "/cizim_olustur.jpg",
       description: "Bu mod, çocuğun yaratıcılığını ve el becerilerini desteklemek için tasarlandı. Çocuk uygulama içinde kendi çizimini yapabilir, ya da ebeveyn kağıda yapılmış bir çizimi uygulamaya yükleyebilir. Yapay zeka, bu çizimi analiz eder ve çocuğun çizdiği karakterleri ve ortamı canlandırır. Çocuk, kendi oluşturduğu karakterlerin canlandığını, hayalindeki ve hatta dahasının oluştuğu resimde yeni bir görsel gelişim gösterir. Bu, yalnızca bir çizim deneyimi değil; hayal gücünü somut bir biçimde yaşama dönüştürme fırsatıdır.",
       benefits: [
         "Beyin gelişimini destekler. El-göz koordinasyonu, planlama ve yaratıcılık merkezlerini aktive eder.",
@@ -22,7 +22,7 @@ export default function Home() {
     {
       id: 2,
       title: "Hikaye Modu",
-      video: "/hikaye_olustur_kisim.webm",
+      image: "/hikaye_olustur_kismi.jpg",
       description: "Bu mod, ebeveynlerin çocukları için kişiselleştirilmiş ve ders çıkarılabilir hikayeler oluşturması için tasarlandı. Önce seslendirme ve stil teması seçilir, sonra hikayenin konusu kısa bir metinle belirlenir. Örneğin: 'Oğlum oyuncaklarını toplamıyor.' veya 'Kızım yaptığım ıspanak yemeğini yemiyor.' gibi. Yapay zeka, duruma uygun bir hikaye oluşturur, görsellerle zenginleştirilir ve seçilen seslendirme ile canlandırılır.",
       benefits: [
         "Çocuk, kendi davranışını hikaye içinde görerek empati kurar ve ders çıkarır.",
@@ -33,7 +33,7 @@ export default function Home() {
     {
       id: 3,
       title: "Uyku Hikayeleri",
-      video: "/uyku_hikayeleri_kisim.webm",
+      image: "/uyku_kismi.jpg",
       description: "Bu mod, çocukların uykuya geçiş sürecini desteklemek için tasarlandı. Ebeveynler önce seslendirme ve görsel stil seçer, sonra uyku hazırlığı teması seçer. Örneğin: 'Kızım Sema'ya tavşanlarla ilgili bir hikaye anlat' veya 'Oğlum Levent ay'da seyahat ediyor.' gibi. Yapay zeka, yumuşak ses tonları, sıcak görseller, sakinleştirici müzik ve anlatımla çocuğun yaşına ve seçilen temaya uygun kişiselleştirilmiş bir uyku hikayesi oluşturur. Bu hikayeler, çocukların günlük streslerden rahatlamasına yardımcı olur ve ayrıca duygusal farkındalık, özgüven ve güvenlik duygusu gibi değerleri destekler.",
       benefits: [
         "Her gece ebeveynle birlikte okunan bir hikaye; ebeveyn-çocuk bağını kuvvetlendirir, kelime dağarcığı ve erken okuryazarlık gelişimini destekler, duygusal düzenlemeyi kolaylaştırır ve düzenli bir uyku rutini oluşturarak çocuğun genel sağlığını iyileştirir."
@@ -42,7 +42,7 @@ export default function Home() {
     {
       id: 4,
       title: "Eğitici Oyuncağım",
-      video: "/oyuncak_kisim.webm",
+      image: "/egitici_oyuncagim.jpg",
       description: "Bu mod, çocuğun favori oyuncağını öğrenme ve farkındalık sürecine dahil eder. Önce ebeveyn çocuğun favori oyuncağının fotoğrafını çeker ve ona bir isim verir - örneğin 'mavi ayıcık' veya 'itfaiye arabası' gibi. Sonra bir hikaye teması belirlenir: Eğitici Hikaye veya Macera. Daha sonra seslendirme ve görsel stil seçimi yapılır. Ardından kısa bir metin konusu verilir. Yapay zeka, bu bilgileri kullanarak çocuğun oyuncağından dinleyeceği bir hikaye oluşturur. Hikaye görselleştirilir, seslendirilir ve çocuğun en yakın bağ kurduğu karakter - yani kendi oyuncağı - hikayenin kahramanı olur.",
       benefits: [
         "Çocuk, hikayede sevdiği oyuncağıyla özdeşleştiği için içeriğe duygusal olarak bağlanır.",
@@ -400,27 +400,22 @@ export default function Home() {
                   <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-start ${
                     videoOnLeft ? '' : 'lg:grid-flow-dense'
                   }`}>
-                    {/* Video - Solda (çift index) veya Sağda (tek index) */}
+                    {/* Görsel - Solda (çift index) veya Sağda (tek index) */}
                     <div className={`relative w-full max-w-[78%] sm:max-w-xl mx-auto translate-x-[12%] sm:translate-x-0 ${videoOnLeft ? 'lg:pr-20 lg:max-w-none lg:mx-0' : 'lg:col-start-2 lg:pl-44 lg:max-w-none lg:mx-0'}`}>
-                      {feature.video ? (
+                      {feature.image ? (
                         <div className="relative rounded-2xl overflow-hidden bg-white w-full">
-                          <video
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
+                          <img
+                            src={feature.image}
+                            alt={feature.title}
                             className="w-full h-auto block"
                             onError={(e) => {
-                              console.error('Video yükleme hatası:', e);
+                              console.error('Görsel yükleme hatası:', e);
                             }}
-                          >
-                            <source src={feature.video} type="video/webm" />
-                            Tarayıcınız video oynatmayı desteklemiyor.
-                          </video>
+                          />
                         </div>
                       ) : (
                         <div className="relative rounded-2xl overflow-hidden bg-white aspect-video flex items-center justify-center min-h-[300px]">
-                          <p className="text-gray-400 font-open-sauce">Video yakında eklenecek</p>
+                          <p className="text-gray-400 font-open-sauce">Görsel yakında eklenecek</p>
                         </div>
                       )}
                     </div>
